@@ -129,7 +129,7 @@ end
 puts charge(3)
 puts charge(12)
 puts charge(16)
-puts charge(25)
+puts charge(25) 
 
 # # ------------------------
 
@@ -454,7 +454,7 @@ numbers = [1,2,3]
 
 fruits.each do |fruit|
   numbers.each do |n|
-    next if n.even? # 奇数の時に飛ばす
+    next if n.even? # 偶数の時に飛ばす
     puts "#{fruit}, #{n}"
   end
 end
