@@ -191,6 +191,8 @@ procudt = Product.new('Railsガイド', 100)
 procudt.name_and_price
 
 # -- 発展2 条件分岐で課税をする
+# 問題　以下のコードを正しく修正する
+# このままだと消費税も分岐も機能しない。
 class Product
   # name title price
   attr_reader :name, :title, :price
@@ -222,9 +224,37 @@ product.to_s
 product = Product.new('ナイツ', 'あの日は晴れだった', 2900)
 product.to_s
 
+# 回答
+class Product
+  # name title price
+  attr_reader :name, :title, :price
+  def initialize(name, title, price)
+    @name, @title, @price = name,title,price
+  end
+
+  # 消費税メソッド
+  def tax_price(price)
+    if name == '東京03'
+      add_tax_price = (price * 1.1).round
+      "#{add_tax_price}円"
+    else
+      "#{price}円"
+    end
+  end
 
 
+  # 出力メソッド
+  def to_s
+    taxed_price = tax_price(price)
+    puts "名前:#{name},タイトル:#{title},値段:#{taxed_price}"
+  end
+end
 
+product = Product.new('東京03', '人間風味', 3200)
+product.to_s
+
+product = Product.new('ナイツ', 'あの日は晴れだった', 2900)
+product.to_s
 
 
 ## 継承
