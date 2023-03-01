@@ -46,6 +46,7 @@ users.each do |user|
   puts "氏名: #{user.full_name}, 年齢:#{user.age}"
 end
 
+# --
 class User
   def initialize(name)
     @name = name
@@ -68,7 +69,7 @@ class User
   def initialize(name)
     @name = name
   end
-
+  # newをしていない段階（インスタンスができていない状態）のため、クラスメソッドとして定義（self.）　
   def self.create_users(names)
     names.map do |name|
       User.new(name)
