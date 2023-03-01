@@ -82,7 +82,9 @@ class User
 end
 
 names = ['Alice', 'Bob', 'Carol']
+# クラスメソッドの呼び出し
 users = User.create_users(names)
+# インスタンスメソッドの呼び出し
 users.each do |user|
   puts user.hello
 end
@@ -116,7 +118,7 @@ class User
   def initialize(name)
     @name = name
   end
-  # selfなしでname=メソッドは呼べない
+  # 値をセットするname=の場合はselfなしでname=メソッドは呼べない
   def rename_to_bob
     name = 'Bob'
   end
