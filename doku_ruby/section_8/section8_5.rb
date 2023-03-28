@@ -65,8 +65,6 @@ def calculate_tax_box(after_input, someProc)
   someProc.call(1.1, after_input)
 end
 
-
-
 sum_proc = Proc.new do |x,y|
     # puts "#{@price}"
     p (x * y).round
