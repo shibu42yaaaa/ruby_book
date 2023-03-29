@@ -169,7 +169,7 @@ module Loggable
     puts "[LOG] #{text}"
   end
 
-  module_function :log
+  module_function :log # 特異メソッドを簡潔にする
 end
 
 Loggable.log('Hello')
